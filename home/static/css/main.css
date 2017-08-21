@@ -1,0 +1,29 @@
+/** {
+	border: solid 1px;	
+}*/
+
+body {
+  background: #e0e0e0;
+  font-family: 'Fjalla One', sans-serif;
+  color: #5b5b5b;
+}
+
+.navbar {
+	background: #f9f9f9;
+	padding-left:40px;
+}
+
+.lastname {
+	color:#86d84b;	
+}
+
+p {
+	margin: 150px 200px 100px 200px;
+	text-align: center;
+	font-size: 2em;
+	min-width:200px;
+}
+
+#navbarSupportedContent {
+	margin-right: 40px;	
+}
