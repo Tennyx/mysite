@@ -18,10 +18,10 @@ body {
 }
 
 p {
-	margin: 150px 200px 100px 200px;
-	text-align: center;
-	font-size: 2em;
-	min-width:200px;
+	/*margin: 100px 200px 100px 200px;*/
+	/*text-align: center;*/
+	/*font-size: 1em;
+	min-width:200px;*/
 }
 
 #navbarSupportedContent {
