@@ -5,8 +5,8 @@ Calculator
 
 {% block header %}
 <script src="/static/js/calc.js"></script>
-<link rel="stylesheet" href="/static/css/calc.css">
 <link href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/calc.css">
 {% endblock %}
 
 {% block content %}
@@ -21,31 +21,38 @@ Calculator
 		<td colspan="4" class="text-right" id="accum">0</td>
 	</tr>
 	<tr>
-		<td><button id="seven" class="btn btn-info">7</button></td>
-		<td><button id="eight" class="btn btn-info">8</button></td>
-		<td><button id="nine"  class="btn btn-info">9</button></td>
-		<td><button id="divide" class="btn btn-warning">/</button></td>
+		<td><button id="seven" class="btn btn-info sq">7</button></td>
+		<td><button id="eight" class="btn btn-info sq">8</button></td>
+		<td><button id="nine"  class="btn btn-info sq">9</button></td>
+		<td><button id="divide" class="btn btn-warning sq">/</button></td>
 	</tr>
 	<tr>
-		<td><button id="four" class="btn btn-info">4</button></td>
-		<td><button id="five" class="btn btn-info">5</button></td>
-		<td><button id="six" class="btn btn-info">6</button></td>
-		<td><button id="times" class="btn btn-warning">*</button></td>
+		<td><button id="four" class="btn btn-info sq">4</button></td>
+		<td><button id="five" class="btn btn-info sq">5</button></td>
+		<td><button id="six" class="btn btn-info sq">6</button></td>
+		<td><button id="times" class="btn btn-warning sq">*</button></td>
 	</tr>
 	<tr>
-		<td><button id="one" class="btn btn-info">1</button></td>
-		<td><button id="two" class="btn btn-info">2</button></td>
-		<td><button id="three" class="btn btn-info">3</button></td>
-		<td><button id="minus" class="btn btn-warning">-</button></td>
+		<td><button id="one" class="btn btn-info sq">1</button></td>
+		<td><button id="two" class="btn btn-info sq">2</button></td>
+		<td><button id="three" class="btn btn-info sq">3</button></td>
+		<td><button id="minus" class="btn btn-warning sq">-</button></td>
 	</tr>
 	<tr>
-		<td><button id="zero" class="btn btn-info">0</button></td>
-		<td><button id="decimal" class="btn btn-info">.</button></td>
-		<td style="font-size:45px;"><button id="clear" class="btn btn-danger">C</button></td>
-		<td><button id="plus" class="btn btn-warning">+</button></td>
+		<td><button id="zero" class="btn btn-info sq">0</button></td>
+		<td><button id="decimal" class="btn btn-info sq">.</button></td>
+		<td style="font-size:45px;"><button id="clear" class="btn btn-danger sq">C</button></td>
+		<td><button id="plus" class="btn btn-warning sq">+</button></td>
 	</tr>
 	<tr>
-		<td colspan="5"><button style="width:366px" id="equals" class="btn btn-success">=</button></td>
+		<td colspan="5"><button style="width:366px;height:90px" id="equals" class="btn btn-success">=</button></td>
 	</tr>
 </table>
+
+
+
+<div class="text-center">
+	<a href="#"><i class="fa fa-github gitlink" aria-hidden="true"></i></a>
+	<p class="text-center">This project was written in jQuery. Click for github code.</p>
+</div>
 {% endblock %}

@@ -4,7 +4,6 @@
 
 body {
   background: #e0e0e0;
-  font-family: 'Fjalla One', sans-serif;
   color: #5b5b5b;
 }
 
@@ -13,17 +12,34 @@ body {
 	padding-left:40px;
 }
 
+.navbar-brand {
+	font-family: 'Fjalla One', sans-serif;
+}
+
 .lastname {
 	color:#86d84b;	
 }
 
-p {
-	/*margin: 100px 200px 100px 200px;*/
-	/*text-align: center;*/
-	/*font-size: 1em;
-	min-width:200px;*/
-}
-
 #navbarSupportedContent {
 	margin-right: 40px;	
+}
+
+.gitlink {
+	font-size: 80px;
+	padding: 40px 0px 15px 0px;
+	color: #5b5b5b;
+}
+
+.gitlink:hover {
+	color:#86d84b;	
+}
+
+.cardlink {
+	text-decoration: none !important;
+	color: gray;
+	text-align: center;
+}
+
+.cardlink:hover {
+	color:red;
 }
