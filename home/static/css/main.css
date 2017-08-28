@@ -40,6 +40,17 @@ body {
 	text-align: center;
 }
 
-.cardlink:hover {
+/*.cardlink:hover {
 	color:red;
+}*/
+
+/*.card-block:hover {
+	background: #86d84b;
 }
+*/
+/*#calc-card:hover {
+	background: #86d84b;
+	border-color: #86d84b;
+
+	color: white;
+}*/
