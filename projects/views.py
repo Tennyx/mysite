@@ -7,11 +7,13 @@ def project_list(request):
 			'title': 'Calculator',
 			'summary': 'Simple calculator built with jQuery.',
 			'url': '/projects/calculator',
+			'image': '#'
 		},
 		'timer': {
 			'title': 'Timer',
 			'summary': 'Simple timer built with jQuery.',
 			'url': '/projects/timer',
+			'image': '#'
 		}
 	}
 
