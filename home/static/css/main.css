@@ -24,33 +24,28 @@ body {
 	margin-right: 40px;	
 }
 
-.gitlink {
+.gitlink-light {
 	font-size: 80px;
 	padding: 40px 0px 15px 0px;
 	color: #5b5b5b;
 }
 
-.gitlink:hover {
+.gitlink-light:hover, .gitlink-dark {
+	font-size: 80px;
+	padding: 40px 0px 15px 0px;
 	color:#86d84b;	
+}
+
+.gitlink-dark:hover {
+	color:#ededed;	
 }
 
 .cardlink {
 	text-decoration: none !important;
-	color: gray;
+	color: #5b5b5b;
 	text-align: center;
 }
 
-/*.cardlink:hover {
-	color:red;
-}*/
-
-/*.card-block:hover {
-	background: #86d84b;
+.card-img-top {
+	filter: grayscale(80%);
 }
-*/
-/*#calc-card:hover {
-	background: #86d84b;
-	border-color: #86d84b;
-
-	color: white;
-}*/
