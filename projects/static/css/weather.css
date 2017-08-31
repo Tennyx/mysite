@@ -1,3 +1,7 @@
+body {
+  background: white;
+}
+
 #loc, #conditions {
   font-size: 190%;
 }
@@ -6,7 +10,7 @@
   font-size: 1400%;
   margin-top: -50px;
   margin-bottom: -50px;
-  background: white;
+  background: rgba(0, 0, 0, 0);
   border: white;
   color: black;
 }

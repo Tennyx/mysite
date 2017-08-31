@@ -108,14 +108,15 @@ $(document).ready(function() {
             answer = "fa fa-question"
         } 
         $("#icon").attr("class", answer);
-      }else{
+      }
+      else{
         var answer = "";                                          //nighttime switch
         switch(json["current_observation"]["weather"]){
           case "Overcast":
             answer = "wi wi-night-alt-cloudy";
             break;
           case "Drizzle":
-            answer = "wi wi-night-rain-mix"; //broken//
+            answer = "wi wi-night-rain-mix";
             break;
           case "Snow":
           case "Snow Grains":
@@ -195,34 +196,18 @@ $(document).ready(function() {
       }
        $("#temp").on("click", function(){
       
-       if($("#degrees").html() == "℉") {
+        if($("#degrees").html() == "℉") {
              $("#degrees").html("&#x2103;");
              $("#temp").html(Math.round(json["current_observation"]["temp_c"]));
-           }else{
+        }
+        else{
              $("#degrees").html("&#x2109;");
              $("#temp").html(Math.round(json["current_observation"]["temp_f"]));
          }
      
         });
       });
-    }); //function(json)//
+    });
   }
-}); //document ready//
-
-  
-  
-  
-  
-  
-  
-  
-  
-   /* if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var lat = position.coords.latitude;
-        var lon = position.coords.longitude;*/
-
-        /*$.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + lat.toString() + "&lon=" + lon.toString() + "&APPID=33906a112c9ccaeb6f563b7e1369e750", function(json){
-        $("#data").html(JSON.stringify(json));*/
-
+});
 
