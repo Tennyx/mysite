@@ -1,0 +1,29 @@
+#loc, #conditions {
+  font-size: 190%;
+}
+
+#temp {
+  font-size: 1400%;
+  margin-top: -50px;
+  margin-bottom: -50px;
+  background: white;
+  border: white;
+  color: black;
+}
+
+#degrees {
+  font-size: 200%;
+}
+
+#icon {
+  font-size: 700%;
+  margin-top: 40px;
+}
+
+button:focus { 
+  outline:none 
+}
+
+h1 {
+  font-size: 220%;
+}

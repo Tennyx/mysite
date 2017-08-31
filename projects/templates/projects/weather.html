@@ -1,0 +1,39 @@
+{% extends "../home/base.html" %}
+{% block title %}
+Weather
+{% endblock %}
+
+{% block header %}
+<script src="/static/js/weather.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/weather.css">
+{% endblock %}
+
+{% block content %}
+<div id="box">
+  <h1 class="text-center">Current Conditions in:</h1>
+
+	<div id="loc" class="text-center">
+	  Cannot Find Location
+	</div>
+
+	<div class="text-center">
+	  <i id="icon"></i>
+	</div>
+
+	<button id="temp" class="center-block"></button>
+  
+  	<div id="degrees" class="text-center"></div>
+
+	<div id="conditions" class="text-center"></div>
+
+	<div class="text-center">(Click on temperature to cycle celsius & fahrenheit)</div>
+</div>
+
+
+
+<div class="text-center">
+	<a href="#"><i class="fa fa-github gitlink-light" aria-hidden="true"></i></a>
+	<p class="text-center description">This project was written in jQuery. Click for github code.</p>
+</div>
+{% endblock %}
