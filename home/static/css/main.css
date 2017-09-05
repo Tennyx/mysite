@@ -12,15 +12,6 @@ body {
   margin-bottom: 60px;
 }
 
-
-/*body {
-  background: url('../images/calefull.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-}*/
-
 .navbar {
 	background: #5d8c46;
 	padding-left:40px;
@@ -38,19 +29,19 @@ body {
 	margin-right: 40px;	
 }
 
-.gitlink-light {
+.fontlink-light {
 	font-size: 80px;
 	padding: 40px 0px 15px 0px;
 	color: #5b5b5b;
 }
 
-.gitlink-light:hover, .gitlink-dark {
+.fontlink-light:hover, .fontlink-dark {
 	font-size: 80px;
 	padding: 40px 0px 15px 0px;
-	color:#86d84b;	
+	color:#5d8c46;	
 }
 
-.gitlink-dark:hover {
+.fontlink-dark:hover {
 	color:#ededed;	
 }
 
@@ -94,6 +85,17 @@ header.masthead > .overlay {
 	/*box-shadow: 10px 10px 35px #bababa;*/
 }
 
+.btn-primary {
+  background: #5d8c46;
+  border: none;
+  border-radius: 0;
+  padding:10px 50px 10px 50px;
+}
+
+.btn-primary:hover {
+  background: #455b39;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -102,4 +104,8 @@ header.masthead > .overlay {
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
   background-color: #5d8c46;
+}
+
+.fontfront, .fontfront:hover {
+  font-size: 270%;  
 }
