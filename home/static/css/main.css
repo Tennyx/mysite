@@ -52,7 +52,7 @@ body {
 }
 
 .card-img-top {
-	filter: grayscale(80%);
+	filter: grayscale(100%);
 }
 
 header.masthead {

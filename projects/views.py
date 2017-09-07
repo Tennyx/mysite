@@ -44,6 +44,36 @@ def project_list(request):
 			'summary': 'Wikipedia viewer made with jQuery',
 			'url': '/projects/wikipedia-viewer',
 			'image': '/static/images/wiki_viewer1.gif'
+		},
+		'markdown-previewer': {
+			'title': 'Markdown Previewer',
+			'summary': 'Markdown Previewer made with Reactjs',
+			'url': '/projects/markdown-previewer',
+			'image': '/static/images/calc1.gif'
+		},
+		'recipe-list': {
+			'title': 'Recipe List',
+			'summary': 'Recipe List made with Reactjs',
+			'url': '/projects/recipe-list',
+			'image': '/static/images/calc1.gif'
+		},
+		'game-of-life': {
+			'title': 'Game of Life',
+			'summary': 'Game of Life made with Reactjs',
+			'url': '/projects/game-of-life',
+			'image': '/static/images/calc1.gif'
+		},
+		'twisted-groves': {
+			'title': 'Twisted Groves',
+			'summary': 'Roguelike game made with Reactjs',
+			'url': '/projects/twisted-groves',
+			'image': '/static/images/calc1.gif'
+		},
+		'zip-finder': {
+			'title': 'Zip Finder',
+			'summary': 'Find zip from city using Google API',
+			'url': '/projects/zip-finder',
+			'image': '/static/images/calc1.gif'
 		}
 	}
 
@@ -69,3 +99,18 @@ def wikipedia_viewer(request):
 
 def weather(request):
 	return render(request, 'projects/weather.html')
+
+def markdown(request):
+	return render(request, 'projects/markdown-previewer.html')
+
+def recipe(request):
+	return render(request, 'projects/recipe-list.html')
+
+def game_of_life(request):
+	return render(request, 'projects/game-of-life.html')
+
+def twisted_groves(request):
+	return render(request, 'projects/twisted-groves.html')
+
+def zip_finder(request):
+	return render(request, 'projects/zip-finder.html')

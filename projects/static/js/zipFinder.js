@@ -1,0 +1,24 @@
+//converts city input to acceptable format for api call (ex: buffalo+ny)
+function convertCity(city){														 
+	return city.split(/[\s,]+/).join('+').toLowerCase();
+}
+
+
+$('#locbtn').on('click', function () {
+	alert('hi');
+	var city = $('#loc').val();
+  	city = convertCity(city);
+  
+	$.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + '&sensor=true', function(json){
+		var lat = json.results[0].geometry.location.lat;
+		var lng = json.results[0].geometry.location.lng;
+		$.getJSON('https://maps.googleapis.com/maps/api/geocode/json?latlng='+ lat + ',' + lng + '&sensor=true', function(json){
+			var dataArr = json.results[0].address_components;
+			for(i=0; i<dataArr.length; i++){
+				if(dataArr[i].types[0] == "postal_code"){
+					$('#result').html(dataArr[i].short_name);
+				}
+			}	
+		});
+	}); 
+});
