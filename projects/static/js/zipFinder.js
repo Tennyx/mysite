@@ -3,9 +3,7 @@ function convertCity(city){
 	return city.split(/[\s,]+/).join('+').toLowerCase();
 }
 
-
-$('#locbtn').on('click', function () {
-	alert('hi');
+function getZip(){
 	var city = $('#loc').val();
   	city = convertCity(city);
   
@@ -21,4 +19,16 @@ $('#locbtn').on('click', function () {
 			}	
 		});
 	}); 
+}
+
+$(document).ready(function(){
+	$('#locbtn').on('click', function(){
+		getZip();
+	});
+
+	$('#loc').keyup(function(event){
+    	if(event.keyCode == 13){
+        	$('#locbtn').click();
+    	}
+	});
 });
