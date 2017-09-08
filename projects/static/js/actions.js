@@ -12,4 +12,13 @@ var mouseOff = function(){
 
 $(document).ready(function() {
 	$('.card').hover(mouseOn, mouseOff);
+
+	$(".lang-filter").click(function(){
+	    if($(".lang-filter").hasClass("sel")){
+	      $(".lang-filter").removeClass("sel");
+	    }
+	    else{
+	      $(".lang-filter").addClass("sel");
+	    }
+  }); 
 });
