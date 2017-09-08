@@ -8,6 +8,7 @@ html {
 
 body {
   background: #d6d6d6;
+  /*background: #1f2021; */
   color: #565656;
   margin-bottom: 60px;
 }
@@ -22,7 +23,7 @@ body {
 }
 
 .lastname {
-	color:#86d84b;	
+	color:#9eed65;	
 }
 
 #navbarSupportedContent {
@@ -52,7 +53,8 @@ body {
 }
 
 .card-img-top {
-	filter: grayscale(100%);
+	/*filter: grayscale(100%);*/
+  background:red;
 }
 
 header.masthead {
@@ -82,7 +84,8 @@ header.masthead > .overlay {
 .card {
 	margin: 5px;
 	padding: 10px;
-	/*box-shadow: 10px 10px 35px #bababa;*/
+	box-shadow: 10px 10px 35px #bababa;
+  border: none;
 }
 
 .btn-primary {
@@ -108,4 +111,27 @@ header.masthead > .overlay {
 
 .fontfront, .fontfront:hover {
   font-size: 270%;  
+}
+
+.lang-tab {
+  background:#686868;
+  text-align:left;
+  font-size:80%;
+  padding:5px
+}
+
+.lang {
+  margin-left:5px;
+}
+
+.lang-jquery {
+  color:#e2f27b;
+}
+
+.lang-reactjs {
+  color:#88b9f7;
+}
+
+.lang-python {
+  color:#f29748;
 }

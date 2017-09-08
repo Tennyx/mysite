@@ -1,7 +1,7 @@
 var mouseOn = function(){
 	$('#' + this.id + '-img').css({'filter':'grayscale(10%)'});
-	$('#' + this.id).css({'color':'#5d8c46', 'background': '#c6c6c6'});
-	$('#' + this.id + '-title').css({"color":"#5d8c46"});
+	$('#' + this.id).css({'color':'#5b5b5b', 'background': '#9eed65'});
+	$('#' + this.id + '-title').css({"color":"#5b5b5b"});
 }
 
 var mouseOff = function(){

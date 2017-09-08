@@ -14,5 +14,6 @@ urlpatterns = [
 	url(r'^recipe-list$', views.recipe, name='recipe'),
 	url(r'^game-of-life$', views.game_of_life, name='game_of_life'),
 	url(r'^twisted-groves$', views.twisted_groves, name='twisted_groves'),
-	url(r'^zip-finder$', views.zip_finder, name='zip_finder')
+	url(r'^zip-finder$', views.zip_finder, name='zip_finder'),
+	url(r'^quote-generator$', views.quote_gen, name='quote_gen')
 ]
