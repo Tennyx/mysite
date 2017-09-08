@@ -13,12 +13,14 @@ var mouseOff = function(){
 $(document).ready(function() {
 	$('.card').hover(mouseOn, mouseOff);
 
-	$(".lang-filter").click(function(){
-	    if($(".lang-filter").hasClass("sel")){
-	      $(".lang-filter").removeClass("sel");
+	$('.lang-filter').click(function(){
+	    if($('#' + this.id).hasClass("sel")){
+	    	$('#' + this.id).removeClass("sel");
+	    	$('.lang-jquery').closest('.card').show();
 	    }
 	    else{
-	      $(".lang-filter").addClass("sel");
+	    	$('#' + this.id).addClass("sel");
+	    	$('.lang-jquery').closest('.card').hide();
 	    }
-  }); 
+	}); 
 });

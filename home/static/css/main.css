@@ -122,6 +122,10 @@ header.masthead > .overlay {
   border-radius: 3px;
 }
 
+.lang-filter:focus {
+  outline: 0 !important;
+}
+
 /*.lang-filter:hover {
   background:#686868;
   font-size:80%;
