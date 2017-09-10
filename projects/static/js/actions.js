@@ -14,15 +14,40 @@ $(document).ready(function() {
 	$('.card').hover(mouseOn, mouseOff);
 
 	$('.lang-filter').click(function(){
+		var clickedLanguage = $(this).text().substr(1);
+		var languages = {
+			'showAll': true,
+			'jquery': false,
+			'python': false,
+			'reactjs': false
+		};
+
 	    if(!$('#' + this.id).hasClass("sel")){
 	    	$('#' + this.id).addClass("sel");
-	    	$('.lang-jquery').closest('.card').show();
-	    	
+	    	languages[clickedLanguage] = true;
+	    	languages.showAll = false;
 	    }
 	    else{
 	    	$('#' + this.id).removeClass("sel");
-	    	$('.lang-jquery').closest('.card').hide();	
+	    	languages[clickedLanguage] = false;
 	    }
+
+	    if(languages['showAll']){
+	    	$('.card').show();	
+	    }
+	    else{
+		    for (var p in languages) {
+	    		if( languages.hasOwnProperty(p) ) {
+	      			if(!languages[p]){
+	      				console.log(languages[p]);
+	      				$('.lang-' + p).closest('.card').hide();
+	      			}
+	      			else{
+	      				$('.lang-' + p).closest('.card').show();	
+	      			}
+	    		} 
+	  		}   
+	   	} 
 	}); 
 });
 
