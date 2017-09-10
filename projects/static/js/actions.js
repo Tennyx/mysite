@@ -13,41 +13,44 @@ var mouseOff = function(){
 $(document).ready(function() {
 	$('.card').hover(mouseOn, mouseOff);
 
+	var showAll = false;
+
+	var languages = {
+		'jquery': 0,
+		'python': 0,
+		'reactjs': 0
+	};
+
+	var counter = 0;
+
 	$('.lang-filter').click(function(){
 		var clickedLanguage = $(this).text().substr(1);
-		var languages = {
-			'showAll': true,
-			'jquery': false,
-			'python': false,
-			'reactjs': false
-		};
-
-	    if(!$('#' + this.id).hasClass("sel")){
+		
+		if(!$('#' + this.id).hasClass("sel")){
 	    	$('#' + this.id).addClass("sel");
-	    	languages[clickedLanguage] = true;
-	    	languages.showAll = false;
+	    	languages[clickedLanguage] = 1;
 	    }
 	    else{
 	    	$('#' + this.id).removeClass("sel");
-	    	languages[clickedLanguage] = false;
+	    	languages[clickedLanguage] = 0;
 	    }
 
-	    if(languages['showAll']){
-	    	$('.card').show();	
-	    }
-	    else{
-		    for (var p in languages) {
-	    		if( languages.hasOwnProperty(p) ) {
-	      			if(!languages[p]){
-	      				console.log(languages[p]);
-	      				$('.lang-' + p).closest('.card').hide();
-	      			}
-	      			else{
-	      				$('.lang-' + p).closest('.card').show();	
-	      			}
-	    		} 
-	  		}   
-	   	} 
+    	$('.card').hide();
+	    
+		for (var p in languages) {
+	    	if( languages.hasOwnProperty(p) ) {
+      			if(languages[p] == 1){
+					$('.lang-' + p).closest('.card').show();
+					counter += 1;
+      			}
+    		}
+    	}
+
+    	if(counter == 0){
+    		$('.card').show();	
+    	}
+
+    	counter = 0;    
 	}); 
 });
 
