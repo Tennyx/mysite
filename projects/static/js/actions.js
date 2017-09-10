@@ -14,13 +14,15 @@ $(document).ready(function() {
 	$('.card').hover(mouseOn, mouseOff);
 
 	$('.lang-filter').click(function(){
-	    if($('#' + this.id).hasClass("sel")){
-	    	$('#' + this.id).removeClass("sel");
+	    if(!$('#' + this.id).hasClass("sel")){
+	    	$('#' + this.id).addClass("sel");
 	    	$('.lang-jquery').closest('.card').show();
+	    	
 	    }
 	    else{
-	    	$('#' + this.id).addClass("sel");
-	    	$('.lang-jquery').closest('.card').hide();
+	    	$('#' + this.id).removeClass("sel");
+	    	$('.lang-jquery').closest('.card').hide();	
 	    }
 	}); 
 });
+
