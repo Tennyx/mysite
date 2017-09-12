@@ -128,15 +128,6 @@ header.masthead > .overlay {
   outline: 0 !important;
 }
 
-/*.lang-filter:hover {
-  background:#686868;
-  font-size:80%;
-  padding:5px;
-  margin:2px;
-  border: none;
-  border-radius: 3px;
-}*/
-
 .sel {
   background:#686868;
   font-size:80%;
@@ -146,16 +137,6 @@ header.masthead > .overlay {
   border-radius: 3px;
   outline:0 !important;
 }
-
-/*.lang-filter:active {
-  background:#686868;
-  font-size:80%;
-  padding:5px;
-  margin:2px;
-  border: none;
-  border-radius: 3px;
-  outline:0;
-}*/
 
 .lang-tab {
   background:#686868;

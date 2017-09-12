@@ -7,14 +7,14 @@ def project_list(request):
 			'title': 'Calculator',
 			'summary': 'Add, subtract, divide & more!',
 			'url': '/projects/calculator',
-			'langlist': ['jquery', 'python', 'reactjs']
+			'langlist': ['jquery']
 			# 'image': '/static/images/calc1.gif'
 		},
 		'timer': {
 			'title': 'Timer',
 			'summary': 'Countdown to extinction.',
 			'url': '/projects/timer',
-			'langlist': ['jquery', 'python']
+			'langlist': ['jquery']
 			# 'image': '/static/images/timer1.gif'
 		},
 		'siamonds': {
