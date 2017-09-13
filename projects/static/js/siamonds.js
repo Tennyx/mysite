@@ -7,117 +7,32 @@ function failSound(){
   failFile.play();
 }
 
+function buttonProps(audioLink, colorClass, colorVal){
+  var audio = new Audio(audioLink);
+  $(colorClass).css('background','white');
+  audio.play(); 
+  setTimeout(function(){
+    $(colorClass).css('background','white');
+    $(colorClass).css('box-shadow','0 5px 155px rgba(145, 92, 182, .7');
+    setTimeout(function(){
+      $(colorClass).css('background', colorVal);
+      $(colorClass).css('box-shadow','0 5px 155px rgba(145, 92, 182, 0');
+    }, 300);
+  }, 50);
+}
+
 var colors = {
-  autoRed : function(){
-    var audio = new Audio("http://caleswitzer.com/here/wp-content/uploads/2017/03/SOUND_1.mp3");
-    $('.red').css('background','white');
-    audio.play(); 
-    setTimeout(function(){
-      $('.red').css('background','white');
-      $('.red').css('box-shadow','0 5px 155px rgba(145, 92, 182, .7');
-      setTimeout(function(){
-        $('.red').css('background','#ff2626');
-        $('.red').css('box-shadow','0 5px 155px rgba(145, 92, 182, 0');
-      }, 300);
-    }, 50);
-  },
-
-  autoGreen : function(){
-    var audio = new Audio("http://caleswitzer.com/here/wp-content/uploads/2017/03/SOUND_2.mp3");
-    $('.green').css('background','white');
-    audio.play(); 
-    setTimeout(function(){
-      $('.green').css('background','white');
-      $('.green').css('box-shadow','0 5px 155px rgba(145, 92, 182, .7');
-      setTimeout(function(){
-        $('.green').css('background','#00ff59');
-        $('.green').css('box-shadow','0 5px 155px rgba(145, 92, 182, 0');
-      }, 300);
-    }, 50);
-  },
-
-  autoOrange : function(){
-    var audio = new Audio("http://caleswitzer.com/here/wp-content/uploads/2017/03/SOUND_3.mp3");
-    $('.orange').css('background','white');
-    audio.play(); 
-    setTimeout(function(){
-      $('.orange').css('background','white');
-      $('.orange').css('box-shadow','0 5px 155px rgba(145, 92, 182, .7');
-      setTimeout(function(){
-        $('.orange').css('background','#ffaa00');
-        $('.orange').css('box-shadow','0 5px 155px rgba(145, 92, 182, 0');
-      }, 300);
-    }, 50);
-  },
-
-  autoBlue : function(){
-    var audio = new Audio("http://caleswitzer.com/here/wp-content/uploads/2017/03/SOUND_4.mp3");
-    $('.blue').css('background','white');
-    audio.play(); 
-    setTimeout(function(){
-      $('.blue').css('background','white');
-      $('.blue').css('box-shadow','0 5px 155px rgba(145, 92, 182, .7');
-      setTimeout(function(){
-        $('.blue').css('background','#00bfff');
-        $('.blue').css('box-shadow','0 5px 155px rgba(145, 92, 182, 0');
-      }, 300);
-    }, 50);
-  },
-  
   pushRed : function(){
-    var audio = new Audio("http://caleswitzer.com/here/wp-content/uploads/2017/03/SOUND_1.mp3");
-    $('.red').css('background','white');
-    audio.play(); 
-    setTimeout(function(){
-      $('.red').css('background','white');
-      $('.red').css('box-shadow','0 5px 155px rgba(145, 92, 182, .7');
-      setTimeout(function(){
-        $('.red').css('background','#ff2626');
-        $('.red').css('box-shadow','0 5px 155px rgba(145, 92, 182, 0');
-      }, 300);
-    }, 50);
+    buttonProps("http://caleswitzer.com/here/wp-content/uploads/2017/03/SOUND_1.mp3", '.red', '#ff2626')
   },
-
   pushGreen : function(){
-    var audio = new Audio("http://caleswitzer.com/here/wp-content/uploads/2017/03/SOUND_2.mp3");
-    $('.green').css('background','white');
-    audio.play(); 
-    setTimeout(function(){
-      $('.green').css('background','white');
-      $('.green').css('box-shadow','0 5px 155px rgba(145, 92, 182, .7');
-      setTimeout(function(){
-        $('.green').css('background','#00ff59');
-        $('.green').css('box-shadow','0 5px 155px rgba(145, 92, 182, 0');
-      }, 300);
-    }, 50);
+    buttonProps("http://caleswitzer.com/here/wp-content/uploads/2017/03/SOUND_2.mp3", '.green', '#00ff59')
   },
-
   pushOrange : function(){
-    var audio = new Audio("http://caleswitzer.com/here/wp-content/uploads/2017/03/SOUND_3.mp3");
-    $('.orange').css('background','white');
-    audio.play(); 
-    setTimeout(function(){
-      $('.orange').css('background','white');
-      $('.orange').css('box-shadow','0 5px 155px rgba(145, 92, 182, .7');
-      setTimeout(function(){
-        $('.orange').css('background','#ffaa00');
-        $('.orange').css('box-shadow','0 5px 155px rgba(145, 92, 182, 0');
-      }, 300);
-    }, 50);
+    buttonProps("http://caleswitzer.com/here/wp-content/uploads/2017/03/SOUND_3.mp3", '.orange', '#ffaa00')
   },
-
   pushBlue : function(){
-    var audio = new Audio("http://caleswitzer.com/here/wp-content/uploads/2017/03/SOUND_4.mp3");
-    $('.blue').css('background','white');
-    audio.play(); 
-    setTimeout(function(){
-      $('.blue').css('background','white');
-      $('.blue').css('box-shadow','0 5px 155px rgba(145, 92, 182, .7');
-      setTimeout(function(){
-        $('.blue').css('background','#00bfff');
-        $('.blue').css('box-shadow','0 5px 155px rgba(145, 92, 182, 0');
-      }, 300);
-    }, 50);
+    buttonProps("http://caleswitzer.com/here/wp-content/uploads/2017/03/SOUND_4.mp3", '.blue', '#00bfff')
   }
 }
 
@@ -128,16 +43,16 @@ function myLoop () {
   setTimeout(function () {    
     switch(simonArr[i]){
       case 0:
-        colors.autoRed();
+        colors.pushRed();
         break;
       case 1:
-        colors.autoGreen();
+        colors.pushGreen();
         break;
       case 2:
-        colors.autoOrange();
+        colors.pushOrange();
         break;
       case 3:
-        colors.autoBlue();
+        colors.pushBlue();
         break;
     }         
     i++;                     
