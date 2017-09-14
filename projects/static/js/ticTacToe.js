@@ -1,15 +1,19 @@
-function menu(){
-  $('#menu').on('click', function() {
-      history.go(0);
-  });
-}
-function overlayX(){
-  $('#overholder').append('<div class="overlay text-center"><h3 id="test">Player 1(X) Wins!</h3>Care to play again?<br><button id="menu" class="btn btn-info">Menu</button></div>')
-}
-function overlayO(){
-  $('#overholder').append('<div class="overlay text-center"><h3 id="test">Player 2(O) Wins!</h3>Care to play again?<br><button id="menu" class="btn btn-info">Menu</button></div>')
-}
-function buildTable(){
+var xoState = 'X';
+
+var xo = [
+          '0','1','2',
+          '3','4','5',
+          '6','7','8'
+          ];
+
+var xoSwitch = {
+                'X':'O',
+                'O':'X'
+                };
+
+var drawCount = 0;
+
+function buildTable(p){
   $('#tab').append(
   '<tr>\
     <td class="sq" id="box0"></td>\
@@ -28,29 +32,80 @@ function buildTable(){
   </tr>');
   
   $('#open').remove();
+  $('#player').html("X starts.");
+
+  if(p == 'one'){
+    var rand = Math.floor((Math.random() * 8) + 1);
+    $('#box' + rand.toString()).html('X');
+    xo[rand] = xoState;
+    xoState = xoSwitch[xoState];
+    $('#player').html(xoState + "'s turn.");
+    drawCount += 1;
+  }
 }
 
-function buildTableCompX(){
-  $('#tab').append(
-  '<tr>\
-    <td class="sq" id="box1"></td>\
-    <td class="sq" id="box2"></td>\
-    <td class="sq" id="box3"></td>\
-  </tr>\
-  <tr>\
-    <td class="sq" id="box4"></td>\
-    <td class="sq" id="box5"></td>\
-    <td class="sq" id="box6"></td>\
-  </tr>\
-  <tr>\
-    <td class="sq" id="box7"></td>\
-    <td class="sq" id="box8"></td>\
-    <td class="sq" id="box9"></td>\
-  </tr>');
+function gameOver(board){
+  var winningCombos = [
+                      [0,1,2],
+                      [3,4,5],
+                      [6,7,8],
+                      [0,3,6],
+                      [1,4,7],
+                      [2,5,8],
+                      [0,4,8],
+                      [2,4,6]
+                      ];
+
+  for(i=0;i<winningCombos.length;i++){
+    var combo = winningCombos[i];
+    if( (board[combo[0]] == board[combo[1]]) && (board[combo[0]] == board[combo[2]]) ){
+      gameOverAlert('win');
+      return;
+    }
+  }
+  drawCount += 1;
   
-  $('#open').remove();
-  var rand = Math.floor((Math.random() * 9) + 1);
-  $('#box' + rand.toString()).html('X');
+  if(drawCount == 9){
+    gameOverAlert('draw');
+  }
+}
+
+function gameOverAlert(results){
+  if(results == 'draw'){
+    var result = 'Draw!'
+  }
+  if(results == 'win'){
+    var result = xoSwitch[xoState] + ' Wins!'
+  }
+  $('#overholder').append(
+    '<div class="overlay text-center">\
+      <div id="winner">' + result + '</div>\
+       Care to play again?\
+      <br>\
+      <button id="menu" class="btn btn-info">Menu</button>\
+    </div>'
+    )
+  $('#player').remove();
+  menu();
+}
+
+function menu(){
+  $('#menu').on('click', function() {
+      history.go(0);
+  });
+}
+
+function actions(players){
+  buildTable(players);
+  $('.sq').on('click', function() {
+    if(!isNaN($(this).html())){
+      $(this).html(xoState);
+      xo[this.id[3]] = xoState;
+      xoState = xoSwitch[xoState];
+      $('#player').html(xoState + "'s turn.");
+      gameOver(xo);
+    }
+  });
 }
 
 $(document).ready(function(){
@@ -454,15 +509,24 @@ $(document).ready(function(){
 // }
   
 
-// $('#oneplayer').on('click', function(){
-//     $("#question").html("Would you prefer X's or O's?");
-//     $("#oneplayer").remove();
-//     $('#open').append('<button id="xbutton" class="btn btn-info">X</button>')
-//     $("#twoplayer").remove();
-//     $('#open').append('<button id="obutton" class="btn btn-info">O</button>')
+$('#oneplayer').on('click', function(){
+    $("#question").html("Would you prefer X or O?");
+    $("#oneplayer").remove();
+    $("#twoplayer").remove();
+    $('#open').append('<button id="xbutton" class="btn btn-info">X</button>');
+    $('#open').append('<button id="obutton" class="btn btn-info">O</button>');
   
-//     $("#xbutton").on("click",function(){
-//         buildTable();
+  
+    $("#xbutton").on("click",function(){
+      actions();
+    });
+
+    $("#obutton").on("click",function(){
+      actions('one');
+    });
+
+
+});
     
 //       $('#player').html("Player 1(X): You're Up!");
 
@@ -749,30 +813,11 @@ $(document).ready(function(){
 //   });
 
 // });
-
-  var xo = [
-          '','','',
-          '','','',
-          '','',''
-          ]
-
-  var xoState = 'X';
-
-  var xoUpdate = {
-                  'X':'O',
-                  'O':'X'
-                  }
+  
+  
 
   $('#twoplayer').on('click', function(){
-    buildTable();
-
-    $('#player').html("Player 1(X): You're Up!");
-    
-    $('.sq').on('click', function() {
-      $(this).html(xoState);
-      xo[this.id[3]] = xoState;
-      xoState = xoUpdate[xoState];
-    });
+    actions();
   });
 
 

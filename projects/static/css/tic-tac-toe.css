@@ -65,6 +65,7 @@ td {
 
 #player {
   margin-top:50px;
+  font-size: 25px;
 }
 
 #open {
@@ -100,8 +101,9 @@ html, body {
   margin-top: 10px;
 }
 
-#test {
- margin-top:170px; 
+#winner {
+ margin-top:170px;
+ font-size: 35px;
 }
 
 .btn-info:hover {
