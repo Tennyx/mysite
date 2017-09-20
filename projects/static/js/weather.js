@@ -7,7 +7,7 @@ $(document).ready(function() {
     
     $.getJSON("https://api.wunderground.com/api/0cfeed09b8367120/conditions/q/"+ lat + "," + lon + ".json", function(json){
       var temp = Math.round(json["current_observation"]["temp_f"]);
-      
+    
       if(Number(temp) <= 70){
         $("#temp").css({"color":"#0077E5"});
       }else if(Number(temp) > 70 && Number(temp) <= 90){
@@ -22,10 +22,10 @@ $(document).ready(function() {
       $("#degrees").html("&#x2109;");
       $("#conditions").html(json["current_observation"]["weather"]);
       
-      var timeNum = json["current_observation"]["local_time_rfc822"].slice(17, -12);  //checks to see if day or night
+      var timeNum = json["current_observation"]["local_time_rfc822"].slice(17, -12);
       
       if(timeNum > 7 && timeNum < 18){
-        var answer = "";                                                            //daytime switch
+        var answer = "";                                                           
         switch(json["current_observation"]["weather"]){
           case "Overcast":
             answer = "wi wi-day-sunny-overcast";

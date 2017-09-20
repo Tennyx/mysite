@@ -1,11 +1,10 @@
-//converts city input to acceptable format for api call (ex: buffalo+ny)
-function convertCity(city){														 
+function sanitizeCity(city){														 
 	return city.split(/[\s,]+/).join('+').toLowerCase();
 }
 
 function getZip(){
 	var city = $('#loc').val();
-  	city = convertCity(city);
+  	city = sanitizeCity(city);
   
 	$.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + '&sensor=true', function(json){
 		var lat = json.results[0].geometry.location.lat;
