@@ -93,6 +93,12 @@ def project_list(request):
 			'url': '/projects/quote-generator',
 			'langlist': ['jquery']
 			# 'image': '/static/images/calc1.gif'
+		},
+		'lake-ohara-bus': {
+			'title': "Bus to Lake O'Hara",
+			'summary': 'Script to the mountains',
+			'url': 'https://github.com/Tennyx/lake-ohara-bus',
+			'langlist': ['python']
 		}
 	}
 
