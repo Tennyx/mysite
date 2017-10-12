@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: #d6d6d6;
+  /*background: #d6d6d6;*/
   /*background: #1f2021; */
   color: #565656;
   margin-bottom: 90px;
@@ -162,6 +162,8 @@ header.masthead > .overlay {
 }
 
 #contact-form {
-  
+  /*border: solid 1px #bcbcbc; */
+  /*padding: 50px;
+  border-radius: 10px;*/
 }
 
