@@ -161,9 +161,6 @@ header.masthead > .overlay {
   color:#f29748;
 }
 
-#contact-form {
-  /*border: solid 1px #bcbcbc; */
-  /*padding: 50px;
-  border-radius: 10px;*/
+#contactConfirm {
+  margin-top: 350px;
 }
-
