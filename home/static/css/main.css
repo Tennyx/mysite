@@ -116,12 +116,17 @@ header.masthead > .overlay {
 }
 
 .lang-filter {
-  background:#d6d6d6;
+  /*background:#d6d6d6;*/
+  background:white;
   font-size:80%;
   padding:5px;
   margin:2px;
   border: none;
   border-radius: 3px;
+}
+
+.lang-filter:hover {
+  background:#e0e0e0;
 }
 
 .lang-filter:focus {
